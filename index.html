@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVAL</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            background-color: #090b0e;
+        }
+        .container{
+            border: solid black;
+            width: 100%;
+            height: auto;
+        }
+        .navbar{
+            border: solid black;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-menu{
+            height: auto;
+            width: 100%;
+        }
+        .main-menu>h1{
+            text-align: center;
+            font-size: 70px;
+            font-family: Arial, Helvetica, sans-serif;
+            color:#eeeeee;
+            font-weight: 700;
+        }
+        .main-menu>h1>span{
+            color: #6005c1;
+        }
+        .main-menu>p{
+            color:#a1a1a1;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .input-box{
+            display: flex;
+            justify-content: center;
+        }
+        .input-box>input[type="text"]{
+            width: 602px;
+            height: 68px;
+            margin-top: 50px;
+            border-radius: 10px;
+            border:solid #7e7be7 3  px;
+        }
+        .input-box>input[type="text"]::placeholder{
+            color:#a1a1a1;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            padding-left: 18px;
+        }
+        .rating{
+            margin-top: 30px;
+            color:#a1a1a1;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+        }
+        .rating>span>i{
+            height: 4x;
+        }
+
+        .Features{
+            width: 80%;
+            margin-top: 50px;
+            margin: auto;
+        }
+        .Features>.title{
+            color: rgb(115, 38, 239);
+            font-size: 25px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .Features>h2{
+            font-size: 45px;
+            font-family: Arial, Helvetica, sans-serif;
+            color:#eeeeee;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+
+        .cards{
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            
+        }
+        .cards>div{
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: white;
+            border-radius: 10px;
+            background-color: #18181b;
+
+        }
+        .cards>div:nth-of-type(1)>p{
+            margin-top: 10px;
+            background-color: #18181b;
+
+        }
+        .cards>div:nth-of-type(1)>h3{
+            background-color:#18181b; 
+        }
+
+        .cards>div:nth-of-type(1)>.anchor{
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            border: solid white 0.5px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #18181b;
+        }
+        .cards>div:nth-of-type(2)>p{
+            margin-top: 10px;
+            background-color: #18181b;
+
+        }
+        .cards>div:nth-of-type(2)>h3{
+            background-color:#18181b; 
+        }
+        
+        .cards>div:nth-of-type(2)>.anchor{
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            border: solid white 0.5px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #18181b;
+        }
+        .cards>div:nth-of-type(3)>p{
+            margin-top: 10px;
+            background-color: #18181b;
+
+        }
+        .cards>div:nth-of-type(3)>h3{
+            background-color:#18181b; 
+        }
+        
+        .cards>div:nth-of-type(3)>.anchor{
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            border: solid white 0.5px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #18181b;
+        }
+        .cards>div:nth-of-type(4)>p{
+            margin-top: 10px;
+            background-color: #18181b;
+
+        }
+        .cards>div:nth-of-type(4)>h3{
+            background-color:#18181b; 
+        }
+        
+        .cards>div:nth-of-type(4)>.anchor{
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            border: solid white 0.5px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #18181b;
+        }
+        .cards>div:nth-of-type(5)>p{
+            margin-top: 10px;
+            background-color: #18181b;
+
+        }
+        .cards>div:nth-of-type(5)>h3{
+            background-color:#18181b; 
+        }
+        
+        .cards>div:nth-of-type(5)>.anchor{
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            border: solid white 0.5px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #18181b;
+        }
+        .cards>div:nth-of-type(6)>p{
+            margin-top: 10px;
+            background-color: #18181b;
+
+        }
+        .cards>div:nth-of-type(6)>h3{
+            background-color:#18181b; 
+        }
+        
+        .cards>div:nth-of-type(6)>.anchor{
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            border: solid white 0.5px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #18181b;
+        }
+        .pricing{
+            width: 80%;
+            margin-top: 50px;
+            margin: auto;
+            background-color: #090b0e;
+        }
+
+        .pricing>.title{
+            color: rgb(115, 38, 239);
+            font-size: 25px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .pricing>h2{
+            font-size: 45px;
+            font-family: Arial, Helvetica, sans-serif;
+            color:#eeeeee;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+
+        .pricing-cards{
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            
+        }
+        .pricing-cards>div{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: white;
+            border-radius: 10px;
+            border:solid white 1px;
+        }
+        .pricing-cards>div:nth-of-type(1){
+            padding:80px;
+        }
+        .pricing-cards>div:nth-of-type(1)>p{
+            margin-top: 10px;
+
+        }
+        .pricing-cards>div:nth-of-type(1)>h3{
+        }
+
+        .pricing-cards>div:nth-of-type(2){
+            padding:80px;
+
+        }
+        .pricing-cards>div:nth-of-type(1)>.anchor{
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            border: solid white 0.5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .pricing-cards>div:nth-of-type(2)>p{
+            margin-top: 10px;
+
+        }
+        .pricing-cards>div:nth-of-type(2)>h3{
+        }
+        
+        .pricing-cards>div:nth-of-type(2)>.anchor{
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            border: solid white 0.5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+            <img src="https://www.umso.com/lib_LUGoPiqXXlDptSWA/csi5g5qmp4uscbth.png" height="40" alt="usmo">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <button>Login</button>
+                <button>Sign Up</button>
+            </nav>
+        </header>
+
+        <!-- Main Section -->
+        <div class="main-menu">
+            <h1>Get your<br><span>AI Generated Website</span><br>In Seconds</h1><br>
+            <p>Give it a try right below, without having to sign up!</p>
+            <div class="input-box">
+                <input type="text" placeholder="Online Coching Business">
+                <!-- <span><button>Generate</button></span>  -->
+            </div>
+            <div class="rating">
+                <p><strong>Excellent</strong>
+                     <span style="padding-left: 15px;">
+                        <i class="fa-solid fa-star" style="color:#00b67a;"></i>
+                        <i class="fa-solid fa-star" style="color:#00b67a;"></i>
+                        <i class="fa-solid fa-star" style="color:#00b67a;"></i>
+                        <i class="fa-solid fa-star" style="color:#00b67a;"></i>
+                        <i class="fa-solid fa-star-half-stroke" style="color:#00b67a;"></i>
+                        <strong style="padding-left: 5px;">4.8 out of 5 based on 85 reviews</strong>
+                    </span></p>
+            </div>
+        </div>
+        <br> <br><br><br>
+        <!-- Features -->
+
+        <div class="Features">
+            <h3 class="title">Features</h3>
+            <h2>Generating your website is just the start. <br>With Umso you can go all the way.</h2>
+
+            <!-- cards -->
+            <div class="cards">
+                <div>
+                    <i class="fa-solid fa-chart-line" style="color: rgb(115, 38, 239);;"></i><br><br>
+                    <h3>Analytics</h3>
+                    <p>Monitor the performance of your startup and base decisions on data. Get website analytics with no extra setup.</p><br>
+                    <a class="anchor" href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-paper-plane" style="color: rgb(115, 38, 239);"></i><br><br>
+                    <h3>Custom Forms</h3>
+                    <p>Don't launch to crickets – build an audience for your startup. Collect leads directly within Umso, without any 3rd-party services.</p><br>
+                    <a class="anchor" href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-user-group" style="color: rgb(115, 38, 239);"></i><br><br>
+                    <h3>User Management</h3>
+                    <p>Enable collaborative work by giving guests access to your sites, projects & other resources.</p><br>
+                    <a class="anchor" href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-pen" style="color: rgb(115, 38, 239)"></i><br><br>
+                    <h3>Blogs</h3>
+                    <p>Produce new content, extend your reach, start appearing on Google. Add a simple blog to your site with a few clicks.</p><br>
+                    <a class="anchor" href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cookie-bite" style="color: rgb(115, 38, 239)"></i><br><br>
+                    <h3>Cookies Solution</h3>
+                    <p>Set up cookie banners that help you respect your visitor's privacy. This is especially important for Europe.</p><br>
+                    <a class="anchor" href="#">Learn more</a>
+                </div>
+                
+                <div>
+                    <i class="fa-solid fa-globe" style="color: rgb(115, 38, 239)"></i><br><br>
+                    <h3>Multilingual Sites</h3>
+                    <p>Easily manage your website in multiple languages. With this feature you can offer your site to everyone.</p><br>
+                    <a class="anchor" href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+
+
+        <!-- Features -->
+
+        <div class="pricing">
+            <h3 class="title">Pricing</h3>
+            <h2>One price for everything.</h2>
+
+            <!-- cards -->
+            <div class="pricing-cards">
+                <div>
+                    <h3>Pro</h3>
+                    <p>Includes everything you need for your professional website</p><br>
+                    <h3>$20</h3><br>
+                    <div class="available">
+                        <div><i class="fa-solid fa-check " style="color: rgb(115, 38, 239); padding-right :10px"></i>Custom Domains</div>
+                        <div><i class="fa-solid fa-check " style="color: rgb(115, 38, 239);padding-right :10px"></i>GDPR Solution</div>
+                        <div><i class="fa-solid fa-check " style="color: rgb(115, 38, 239);padding-right :10px"></i>Beautiful Site Design</div>
+                        <div><i class="fa-solid fa-check " style="color: rgb(115, 38, 239);padding-right :10px"></i>Super-Fast Hosting</div>
+                        <div><i class="fa-solid fa-check " style="color: rgb(115, 38, 239);padding-right :10px"></i>Analytics</div>
+                        <div><i class="fa-solid fa-check " style="color: rgb(115, 38, 239);padding-right :10px"></i>Custom Forms</div>
+                    </div>
+
+                </div>
+                <div>
+                    <h3>Basic</h3>
+                    <p>Publish your site for free with almost all pro features.</p><br>
+                    <h3>Free</h3><br>
+                    <p>
+                        Everything from Pro, except:  <br>
+                        - No Custom Domains <br>
+                        - "Made with Umso" Branding <br>
+                        -  No credit card required
+                     </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://kit.fontawesome.com/a89a1bd747.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<!-- #00b67a -->
+84.78*21
